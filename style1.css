@@ -1,0 +1,762 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+    scroll-behavior:smooth;
+}
+
+:root{
+  --backdrop-filter-blur:blur(5px);
+  --bluish-green:#007580;
+  --mustard-yellow:#fed049;
+  --greyish-blue:#487e95;
+  --sky-blue:#a2d5f2;
+  --white-alpha-25:rgba(255, 255, 255, 0.25);
+  --white-alpha-40:rgba(255,255,255,0.25);
+}
+
+body{
+  min-height:100vh;
+  background-image:linear-gradient(45deg, var(--greyish-blue) 5%, var(--bluish-green) 40%, var(--sky-blue) 80%, var(--mustard-yellow) );
+  overflow-x:hidden;
+  -webkit-tap-highlight-color:transparent;
+  line-height:1,5;
+  padding: 5vh 15px;
+  background-repeat: no-repeat;
+  /* background: cover; */
+}
+
+body::before{
+  content:' ';
+  position:fixed;
+  left:0;
+  top:0;
+  height:100%;
+  width:100%;
+  background-color:var(--sky-blue);
+  z-index:-1;
+  opacity:0.15;
+  background-repeat: no-repeat;
+}
+/* gradient end */
+/* glass */
+.container{
+    position:relative;
+    width:calc(106.5% - 100px);
+    min-height:calc(1000vh - 280px);
+    min-height:600px;
+    background:rgba(255,255,255,0.5);
+    box-shadow:0 15px 35px rgba(0,0,0,0.20);
+    border-radius:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background-repeat: no-repeat;
+}
+/* end */
+
+  /* .logo{
+    /* background-color:#43cb83; */
+    /* padding-bottom: 0px;
+    height: 100px;
+    padding-right: 100px;
+  } */ 
+  .header {
+    overflow: hidden;
+    background-color: #caf0f8;
+    padding: 20px 10px; 
+    text-align: center;
+    color: #03045e;
+    font-family: 'Roboto Slab', serif;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bolder;
+  }
+  
+  body {
+    /* background-color: black; */
+    font-family: cursive;
+  }
+
+  .glow {
+    font-size: 80px;
+    color: #fff;
+    text-align: center;
+    animation: glow 1s ease-in-out infinite alternate;
+  }
+
+  @-webkit-keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px red, 0 0 40px red, 0 0 50px red, 0 0 60px red, 0 0 70px red;
+    }
+
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px red, 0 0 40px red, 0 0 50px red, 0 0 60px red, 0 0 70px red, 0 0 80px red;
+    }
+  }  
+
+  /* navbar */
+
+  /* Add a black background color to the top navigation */
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Add an active class to highlight the current page */
+.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
+
+/* Dropdown container - needed to position the dropdown content */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Style the dropdown button to fit inside the topnav */
+.dropdown .dropbtn {
+  font-size: 17px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+/* Style the dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Style the links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a dark background on topnav links and the dropdown button on hover */
+.topnav a:hover, .dropdown:hover .dropbtn {
+  background-color: #555;
+  color: white;
+}
+
+/* Add a grey background to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Show the dropdown menu when the user moves the mouse over the dropdown button */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child), .dropdown .dropbtn {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .topnav.responsive .dropdown {float: none;}
+  .topnav.responsive .dropdown-content {position: relative;}
+  .topnav.responsive .dropdown .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+.containerOne{
+  padding-bottom:100px;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+  padding-top:100px;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+  padding-top: 220px;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+.Ducati{
+  background-image: url("https://www.teahub.io/photos/full/8-80332_blur-background-hd.jpg");
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+
+
+.page1 .column{
+  width:100%;
+}
+.specs{
+  padding-left:570px;
+}
+.page1 .left{
+  width:60%;
+  height:0;
+}
+
+.page1 .right{
+ width: 90%;
+  
+}
+
+.page1 .left img{
+  width: 80%;
+  padding-top:100px;
+}
+
+.title{
+  text-align:right;
+  padding-right:50px;
+  padding-bottom: 50px;
+}
+.right{
+  text-align:left; 
+  color:whitesmoke;
+  padding-right:50px;
+  padding-top:100px;
+}
+.title1{
+  font-size: 30px;
+  font-family: cursive;
+  padding-left: 350px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: aliceblue;
+}
+.Yamaha{
+  background-image: url("https://www.teahub.io/photos/full/8-80332_blur-background-hd.jpg");
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+.Aprilia{
+  background-image: url("https://www.teahub.io/photos/full/8-80332_blur-background-hd.jpg");
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+.Kawasaki{
+  background-image: url("https://www.teahub.io/photos/full/8-80332_blur-background-hd.jpg");
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+.BMW{
+  background-image: url("https://www.teahub.io/photos/full/8-80332_blur-background-hd.jpg");
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+
+/* feedback form */
+ /*Background*/
+
+ .share {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-top: 200px;
+  font-size: 3vw;
+  font-family: 'Roboto Slab', serif ;
+  color: #caf0f8;
+}
+.formimage{
+  background-image:url("https://backgroundcheckall.com/wp-content/uploads/2018/10/background-untuk-website.png");
+  width: 100%;
+  height: 900px;
+  margin-bottom:100px;
+  /* background-repeat: no-repeat; */
+}
+.body-part5{
+  padding-right: 250px;
+  padding-left: 250px;
+  padding-top:100px;
+}
+
+.Review{
+  text-align: center;
+  padding-bottom:30px;
+}
+.feedback-form{
+  /* padding-left: 500px;
+  width: 650px; */
+position: absolute;
+right: 300px;
+padding: 16px;
+margin: 20px;
+max-width: 300px;
+width: 50%;
+  background-color:white;
+}
+input[type=text], input[type=email], select, textarea{
+width: 100%;
+margin: 5px 0 22px 0;
+margin-top:0;
+border: none;
+padding: 15px;
+background: #f1f1f1;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+textarea{
+  height: 10%;
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 6px; /* Bottom margin */
+  resize: vertical;
+  
+}
+/* Share */
+.shareicon{
+/* padding-top: 250px; */
+line-height: 55px;
+width: 55px;
+height: 55px;
+position: absolute;
+top: 600px;
+
+}
+.shareicon a{
+text-decoration: none;
+}
+.part5b{
+  width: 1070px;
+  text-align: right;
+  padding-top: 50px;
+  padding-right:103px;
+}
+
+.part5a p{
+  margin:0;
+  
+}
+
+/* About */
+.about1{
+  width:1000px;
+  padding-left:300px;
+}
+.part1a p{
+  text-align: center;
+  align-content:center;
+  justify-items: center;
+}
+.part1a{
+  width:1000px;
+  padding-bottom: 50px;
+  text-align: center;
+  align-content:center;
+  justify-items: center;
+}
+.part1a1{
+  width: 20%;
+  float: right;
+  /* padding-bottom: 50px; */
+}
+.about-superbikes{
+  width: 160%;
+
+}
+.part1a1 img{
+  width: 360px;
+  height: 260px;
+  border-radius: 100%;
+}
+.part1b{
+  width: 500px;
+  padding-left: 300px;
+  padding-top:100px;
+  padding-bottom:100px;
+}
+
+.part2{
+  text-align:center;
+  
+}
+.part2a{
+  width: 20%;
+  float: right;
+  padding-top: 100px;
+  padding-bottom: 200px;
+  padding-left: 50px;
+}
+.part2a img{
+  width: 500px;
+ 
+}
+.part2b{
+  width: 150%;
+}
+
+
+.body-part2{
+  width:1000px;
+  padding-left:300px;
+  text-align: center;
+  align-content:center;
+  justify-items: center;
+}
+
+.body-part4{
+  width:1000px;
+  padding-left:300px;
+  text-align: center;
+  align-content:center;
+  justify-items: center;
+}
+.summary{
+  padding-bottom: 100px;
+  padding-left: 150px;
+}
+.part4a{
+  width: 1000px;
+  text-align: center;
+  padding-right: 100px;
+}
+.part4b{
+  width: 1000px;
+  padding-top: 50px;
+  padding-right: 100px;
+}
+.part5aa {
+  float: left;
+  padding-top: 400px;
+}
+.part5aa p {
+width: 600px;
+  font-size:20px;
+}
+
+
+
+
+
+
+
+/* Footer */
+  
+ *, *:before, *:after {
+  box-sizing: border-box;
+}
+
+
+.footer {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 30px 30px 20px 30px;
+  color: #2f2f2f;
+  background-color: #caf0f8;
+  border-top: 1px solid #90e0ef;
+}
+
+.footer > * {
+  flex:  1 100%;
+}
+
+.footer__addr {
+  margin-right: 1.25em;
+  margin-bottom: 2em;
+}
+
+.footer__logo {
+  font-family: 'Roboto-Slab', serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+.footer__addr h2 {
+  margin-top: 1.3em;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.nav__title {
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.footer address {
+  font-style: normal;
+  color: #999;
+}
+
+
+
+.footer ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer li {
+  line-height: 2em;
+}
+
+.footer a {
+  text-decoration: none;
+}
+
+.footer__nav {
+  display: flex;
+    flex-flow: row wrap;
+}
+
+.footer__nav > * {
+  flex: 1 50%;
+  margin-right: 1.25em;
+}
+
+.nav__ul a {
+  color: #999;
+}
+
+.nav__ul--extra {
+  column-count: 1;
+  column-gap: 0.25em;
+}
+
+.legal {
+  display: flex;
+  flex-wrap: wrap;
+  color: #999;
+}
+  
+.legal__links {
+  display: flex;
+  align-items: center;
+}
+
+.heart {
+  color: tomato;
+}
+
+@media screen and (min-width: 24.375em) {
+  .legal .legal__links {
+    margin-left: auto;
+  }
+}
+
+@media screen and (min-width: 40.375em) {
+  .footer__nav > * {
+    flex: 1;
+  }
+  
+  .nav__item--extra {
+    flex-grow: 2;
+  }
+  
+  .footer__addr {
+    flex: 1 0px;
+  }
+  
+  .footer__nav {
+    flex: 2 0px;
+  }
+}
+
+
+
+ /* Icons */ 
+
+
+
+ .footer-icons .fa {
+  padding: 20px;
+  font-size: 30px;
+  width: auto;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+.footer-icons .fa:hover {
+    opacity: 0.7;
+}
+
+.footer-icons .fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.footer-icons .fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.footer-icons .fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+.footer-icons .fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+
+.footer-icons .fa-instagram {
+  background: #125688;
+  color: white;
+}
